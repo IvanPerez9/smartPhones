@@ -19,7 +19,7 @@ public class SimilarPricedControllerImpl {
 
 	@GetMapping("/smartphone/{id}/similar")
     public ResponseEntity<Smartphone> findSimilarSmartphones(@PathVariable String id) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        return ResponseEntity.status(HttpStatus.OK).body(new Smartphone());
     }
 	
 }

@@ -3,20 +3,22 @@
  */
 package smartphone.model.mapper;
 
-import org.mapstruct.Mapper;
-
 import smartphone.entity.Smartphone;
 import smartphone.model.SmartphoneDto;
 
 /**
  * @author ivan
  *
- *  https://github.com/IvanPerez9
+ *         https://github.com/IvanPerez9
  */
-@Mapper
-public interface SmartphoneMapper {
+public class SmartphoneMapper {
 
-	SmartphoneDto smartphoneToDto (Smartphone entity);
-	
-	Smartphone smartphoneToEntity (SmartphoneDto dto);
+	public SmartphoneDto smartphoneToDto(Smartphone entity) {
+		return null;
+
+	}
+
+	public Smartphone smartphoneToEntity(SmartphoneDto dto) {
+		return null;
+	}
 }

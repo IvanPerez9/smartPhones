@@ -1,5 +1,7 @@
 package smartphone.entity;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +15,7 @@ public class Smartphone {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
 	@Column(name = "NAME")
     private String name;
@@ -22,7 +24,7 @@ public class Smartphone {
     private String brand;
 
 	@Column(name = "PRICE")
-    private String price;
+    private BigDecimal price;
 	
 	@Column(name = "CURR")
 	private String currency;
