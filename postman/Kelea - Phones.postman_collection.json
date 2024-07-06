@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "71c30a82-798b-4a3a-916f-29d47ea3e155",
+		"name": "Kelea - Phones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3911386"
+	},
+	"item": [
+		{
+			"name": "GET SmartPhone by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/smartphone/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"smartphone",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET SmartPhone list Id - similar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/smartphone/1/similarprices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"smartphone",
+						"1",
+						"similarprices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET SmartPhone list phones - similar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/smartphone/1/similar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"smartphone",
+						"1",
+						"similar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
