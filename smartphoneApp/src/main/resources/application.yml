@@ -1,0 +1,7 @@
+server:
+  port : 5000
+app:
+  regional-settings:
+    regionalCurrency: EUR
+    rangeDifference: 100
+    

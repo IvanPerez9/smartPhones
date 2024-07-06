@@ -3,6 +3,12 @@
  */
 package smartphone.model;
 
+import java.math.BigDecimal;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,14 +25,20 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonInclude(Include.NON_NULL)
 public class SmartphoneDto {
 
+	@NotNull
 	private String id;
 
+	@NotNull
 	private String name;
 
 	private String brand;
 
-	private String price;
+	@NotNull
+	private BigDecimal price;
+	
+	private String currency;
 
 }
