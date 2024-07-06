@@ -6,7 +6,9 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import smartphone.entity.Smartphone;
 import smartphone.model.SmartphoneDto;
@@ -43,7 +45,7 @@ public class SmartphoneServiceImpl implements SmartphoneService {
      */
     public SmartphoneDto getSmartphoneById(Long id) {
         Smartphone smartphone = smartphoneRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Smartphone with id " + id + " not found"));
+        		.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Smartphone with id " + id + " not found"));
         return SmartphoneMapper.smartphoneToDto(smartphone);
     }
 
@@ -55,7 +57,7 @@ public class SmartphoneServiceImpl implements SmartphoneService {
      */
     public List<Long> getSimilarPricePhoneIds(Long id) {
         Smartphone baseSmartphone = smartphoneRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Smartphone with id " + id + " not found"));
+        		.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Smartphone with id " + id + " not found"));
 
         BigDecimal price = baseSmartphone.getPrice();
         BigDecimal minPrice = price.subtract(rangeDifference);

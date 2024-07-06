@@ -18,6 +18,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.util.ReflectionTestUtils;
+import org.springframework.web.server.ResponseStatusException;
 
 import smartphone.entity.Smartphone;
 import smartphone.model.SmartphoneDto;
@@ -73,11 +74,11 @@ class SmartphoneServiceTest {
 
 		when(smartphoneRepository.findById(anyLong())).thenReturn(java.util.Optional.empty());
 
-		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+		ResponseStatusException exception = assertThrows(ResponseStatusException.class,
 				() -> smartphoneService.getSmartphoneById(id));
 
 		String expectedMessage = "Smartphone with id " + id + " not found";
-		assertEquals(expectedMessage, exception.getMessage());
+		assertEquals(expectedMessage, exception.getReason());
 	}
 
 	@Test
@@ -119,11 +120,11 @@ class SmartphoneServiceTest {
 
 		when(smartphoneRepository.findById(any(Long.class))).thenReturn(java.util.Optional.empty());
 
-		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+		ResponseStatusException exception = assertThrows(ResponseStatusException.class,
 				() -> smartphoneService.getSimilarPricePhoneIds(id));
 
 		String expectedMessage = "Smartphone with id " + id + " not found";
-		assertEquals(expectedMessage, exception.getMessage());
+		assertEquals(expectedMessage, exception.getReason());
 	}
 
 	@Test
@@ -133,10 +134,10 @@ class SmartphoneServiceTest {
 		when(smartphoneRepository.findById(invalidId)).thenReturn(java.util.Optional.empty());
 
 		// Act & Assert
-		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+		ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> {
 			smartphoneService.getSmartphoneById(invalidId);
 		});
-		assertEquals("Smartphone with id " + invalidId + " not found", exception.getMessage());
+		assertEquals("Smartphone with id " + invalidId + " not found", exception.getReason());
 	}
 
 	@Test
