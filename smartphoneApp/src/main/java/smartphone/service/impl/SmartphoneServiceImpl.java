@@ -76,7 +76,7 @@ public class SmartphoneServiceImpl implements SmartphoneService {
      */
     public List<SmartphoneDto> getSimilarPriceSmartphones(Long id) {
         return Optional.ofNullable(getSimilarPricePhoneIds(id))
-                .orElseGet(() -> List.of())
+                .orElseGet(List::of)
                 .stream()
                 .map(this::getSmartphoneById)
                 .collect(Collectors.toList());
