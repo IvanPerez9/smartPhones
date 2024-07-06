@@ -69,6 +69,6 @@ mvn clean install
 - Se hacen 3 endpoint, aunque el cliente solo consuma 1. Así se puede probar cada parte por separado, y en el swagger se puede solo exponer el necesario.
 
 - Se saca una colección de postman para probar los endpoint no solo con los test. Colección de Postman para realizar las pruebas:
-    -   [Postman](https://github.com/IvanPerez9/smartPhones)
+    -   [Postman]([https://github.com/IvanPerez9/smartPhones](https://github.com/IvanPerez9/smartPhones/tree/main/postman))
 
 - Como patrón, usando springboot está presente la inyección de dependencias. La inyección de las dependencias las hago mediante constructor, ya que es la recomendada para la mayoría de casos, aunque podría haber sido por campo, ya que el ejemplo es básico.
